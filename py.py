@@ -14,14 +14,14 @@ def t_newline(tok):
 t_ignore_comment = r'\#[^\n]*'
 
 def t_NUM(tok):
-    r'[0-9]+(\.[0-9]+)?([eE][\+\-]?[0-9]+)?'
+    r'([0-9]+(\.[0-9]*)?|\.[0-9]+)([eE][\+\-]?[0-9]+)?'
 #     tok.value = float(tok.value)
     return tok
 def t_SYM(tok):
     r'[a-zA-Z0-9]+'
     return tok
 def t_OP(tok):
-    r'[\=\+\-\*\/]'
+    r'[\=\+\-\*\/\^\(\)]'
     return tok
 
 def t_error(tok): print 'error:',tok
